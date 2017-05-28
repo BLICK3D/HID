@@ -44,56 +44,41 @@ typedef union {
 	uint8_t whole8[0];
 	uint16_t whole16[0];
 	uint32_t whole32[0];
-	uint32_t buttons;
+	uint32_t buttons; // TODO 
 
 	struct{
-		uint8_t button1 : 1;
-		uint8_t button2 : 1;
-		uint8_t button3 : 1;
-		uint8_t button4 : 1;
-		uint8_t button5 : 1;
-		uint8_t button6 : 1;
-		uint8_t button7 : 1;
-		uint8_t button8 : 1;
-
-		uint8_t button9 : 1;
-		uint8_t button10 : 1;
-		uint8_t button11 : 1;
+		uint8_t reserved;
+		uint8_t byte_count;
+		
 		uint8_t button12 : 1;
 		uint8_t button13 : 1;
 		uint8_t button14 : 1;
 		uint8_t button15 : 1;
-		uint8_t button16 : 1;
+		
+		uint8_t button9 : 1;
+		uint8_t button10 : 1;
+		uint8_t button7 : 1;
+		uint8_t button8 : 1;
+		
+		uint8_t button5 : 1;
+		uint8_t button6 : 1;
+		uint8_t button11 : 1;
+		
+		unit8_t reserved_1 : 1;
+				
+		uint8_t button1 : 1;
+		uint8_t button2 : 1;
+		uint8_t button3 : 1;
+		uint8_t button4 : 1;
 
-		uint8_t button17 : 1;
-		uint8_t button18 : 1;
-		uint8_t button19 : 1;
-		uint8_t button20 : 1;
-		uint8_t button21 : 1;
-		uint8_t button22 : 1;
-		uint8_t button23 : 1;
-		uint8_t button24 : 1;
-
-		uint8_t button25 : 1;
-		uint8_t button26 : 1;
-		uint8_t button27 : 1;
-		uint8_t button28 : 1;
-		uint8_t button29 : 1;
-		uint8_t button30 : 1;
-		uint8_t button31 : 1;
-		uint8_t button32 : 1;
-
+		int8_t	zAxis;
+		int8_t	rzAxis;
+		
 		int16_t	xAxis;
 		int16_t	yAxis;
 
 		int16_t	rxAxis;
 		int16_t	ryAxis;
-
-		int8_t	zAxis;
-		int8_t	rzAxis;
-
-		uint8_t	dPad1 : 4;
-		uint8_t	dPad2 : 4;
 	};
 } HID_GamepadReport_Data_t;
 
